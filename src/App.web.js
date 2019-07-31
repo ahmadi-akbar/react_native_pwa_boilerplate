@@ -1,8 +1,10 @@
 // App.js - WEB
 import React, { PureComponent } from "react";
 import { View } from "react-native";
-import WebRoutesGenerator from "./components/NativeWebRouteWrapper";
 import { ModalContainer } from "react-router-modal";
+import { Provider } from "react-redux";
+import store from "./actions/store";
+import WebRoutesGenerator from "./components/NativeWebRouteWrapper";
 import TopNav from "./components/TopNav";
 import Screens from "./screens";
 
@@ -31,11 +33,13 @@ const routeMap = {
 export default class App extends PureComponent {
   render() {
     return (
-      <View style={{ height: "100vh", width: "100vw" }}>
-        <TopNav />
-        {WebRoutesGenerator({ routeMap })}
-        <ModalContainer />
-      </View>
+      <Provider store={store}>
+        <View style={{ height: "100vh", width: "100vw" }}>
+          <TopNav />
+          {WebRoutesGenerator({ routeMap })}
+          <ModalContainer />
+        </View>
+      </Provider>
     );
   }
 }

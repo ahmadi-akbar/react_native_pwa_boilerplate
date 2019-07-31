@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 import { Button, Text, View } from "react-native";
+import { connect } from "react-redux";
 
-export default class DasModalScreen extends PureComponent {
+class DasModalScreen extends PureComponent {
   render() {
     return (
       <View
@@ -23,3 +24,10 @@ export default class DasModalScreen extends PureComponent {
     );
   }
 }
+
+const mapStateToProps = state => ({});
+
+export default connect(
+  mapStateToProps,
+  {}
+)(DasModalScreen);
