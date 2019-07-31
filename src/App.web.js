@@ -4,28 +4,25 @@ import { View } from "react-native";
 import WebRoutesGenerator from "./components/NativeWebRouteWrapper";
 import { ModalContainer } from "react-router-modal";
 import TopNav from "./components/TopNav";
-import HomeScreen from "./Screens/HomeScreen";
-import SecondScreen from "./Screens/SecondScreen";
-import UserScreen from "./Screens/UserScreen";
-import DasModalScreen from "./Screens/DasModalScreen";
+import Screens from "./screens";
 
 const routeMap = {
   Home: {
-    component: HomeScreen,
+    component: Screens.Home,
     path: "/",
     exact: true
   },
   Second: {
-    component: SecondScreen,
+    component: Screens.Second,
     path: "/second"
   },
   User: {
-    component: UserScreen,
+    component: Screens.User,
     path: "/user/:name?",
     exact: true
   },
   DasModal: {
-    component: DasModalScreen,
+    component: Screens.DasModal,
     path: "*/dasmodal",
     modal: true
   }

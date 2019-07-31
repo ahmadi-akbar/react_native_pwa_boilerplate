@@ -2,29 +2,25 @@
 
 import {
   createAppContainer,
-  createDrawerNavigator,
   createStackNavigator,
   createBottomTabNavigator
 } from "react-navigation";
-import HomeScreen from "./Screens/HomeScreen";
-import SecondScreen from "./Screens/SecondScreen";
-import UserScreen from "./Screens/UserScreen";
-import DasModalScreen from "./Screens/DasModalScreen";
+import Screens from "./screens";
 
 const HomeStack = createStackNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: Screens.Home,
     navigationOptions: { title: "Home" }
   }
 });
 
 const SecondStack = createStackNavigator({
   Second: {
-    screen: SecondScreen,
+    screen: Screens.Second,
     navigationOptions: { title: "Second" }
   },
   User: {
-    screen: UserScreen,
+    screen: Screens.User,
     navigationOptions: { title: "User" }
   }
 });
@@ -36,7 +32,7 @@ const TabNav = createBottomTabNavigator({
 const RootStack = createStackNavigator(
   {
     Main: TabNav,
-    DasModal: DasModalScreen
+    DasModal: Screens.DasModal
   },
   {
     mode: "modal",
